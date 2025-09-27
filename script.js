@@ -20,7 +20,8 @@ $(document).ready(function() {
             const thumbnailImg = $('<img>').attr({
                 'src': slideImg.attr('src'),
                 'alt': slideImg.attr('alt'),
-                'title': slideTitle
+                'title': slideTitle,
+                'class': 'gallery-thumbnail-img'
             });
             
             // Add click handler for thumbnail navigation
@@ -50,7 +51,7 @@ $(document).ready(function() {
             dots: false,
             centerMode: false,
             focusOnSelect: true,
-            infinite: false,
+            infinite: true,
             responsive: [
                 {
                     breakpoint: 768,
@@ -77,11 +78,11 @@ $(document).ready(function() {
             slidesToScroll: 1,
             arrows: true,
             fade: false,
-            infinite: false,
-            speed: 1000,
+            infinite: true,
+            speed: 400,
             asNavFor: '.gallery-thumbnails',
-            prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">‹</button>',
-            nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">›</button>',
+            prevArrow: $('.gallery-nav-prev'),
+						nextArrow: $('.gallery-nav-next'),
             dots: false,
             adaptiveHeight: false
         });
